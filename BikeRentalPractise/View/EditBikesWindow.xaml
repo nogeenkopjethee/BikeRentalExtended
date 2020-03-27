@@ -1,0 +1,34 @@
+﻿<Window x:Class="BikeRentalPractise.View.EditBikesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BikeRentalPractise.View"
+        mc:Ignorable="d"
+        Title="EditBikesWindow" Height="450" Width="800">
+    <Grid>
+
+        <DataGrid ItemsSource="{Binding Bikes}" SelectedItem="{Binding SelectedBike}" HorizontalAlignment="Left" Height="258" Margin="10,58,0,0" VerticalAlignment="Top" Width="510"/>
+        <Button Command="{Binding EditBikeClick}" x:Name="ChangeBike" Content="Edit Bike" HorizontalAlignment="Left" Margin="694,295,0,0" VerticalAlignment="Top" Width="63" Height="21"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="607,67,0,0" TextWrapping="Wrap" Text="{Binding NewBike.BikeModel}" VerticalAlignment="Top" Width="64" />
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="609,154,0,0" TextWrapping="Wrap" Text="{Binding NewBike.BikeType}" VerticalAlignment="Top" Width="62" />
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="606,110,0,0" TextWrapping="Wrap" Text="{Binding NewBike.BikeGender}" VerticalAlignment="Top" Width="65" />
+        <Button Command="{Binding DeleteBikeClick}" Content="Delete Bike" HorizontalAlignment="Left" Margin="190,346,0,0" VerticalAlignment="Top" Width="138" Height="41"/>
+        <Button Content="Add" Command="{Binding AddBikeClick}" HorizontalAlignment="Left" Margin="610,295,0,0" VerticalAlignment="Top" Width="61" Height="21" RenderTransformOrigin="-0.327,-0.357" />
+        <Label Content="Bike Type" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="13.816,4.019" Margin="524,106,0,0" Width="75" Height="27"/>
+        <Label Content="Bike Model" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="13.816,4.019" Margin="525,64,0,0" Width="70" Height="27"/>
+        <Label Content="Bike Gender" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="13.816,4.019" Margin="525,154,0,0" Width="75" Height="27"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="609,187,0,0" TextWrapping="Wrap" Text="{Binding NewBike.Size}" VerticalAlignment="Top" Width="62" />
+        <Label Content="Size" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="13.816,4.019" Margin="524,186,0,0" Width="75" Height="27"/>
+        <Label Content="Daily rate" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="13.816,4.019" Margin="533,252,0,0" Width="75" Height="27"/>
+        <Label Content="Hourly rate" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="13.816,4.019" Margin="528,219,0,0" Width="75" Height="27"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="610,222,0,0" TextWrapping="Wrap" Text="{Binding NewBike.HourlyRate}" VerticalAlignment="Top" Width="61" />
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="610,255,0,0" TextWrapping="Wrap" Text="{Binding NewBike.DailyRate}" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.469,2.166" />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="694,68,0,0" TextWrapping="Wrap"  Text="{Binding SelectedBike.BikeModel}" VerticalAlignment="Top" Width="63"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="694,106,0,0" TextWrapping="Wrap" Text="{Binding SelectedBike.BikeType}" VerticalAlignment="Top" Width="63"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="694,153,0,0" TextWrapping="Wrap" Text="{Binding SelectedBike.BikeGender}" VerticalAlignment="Top" Width="63"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="694,187,0,0" TextWrapping="Wrap" Text="{Binding SelectedBike.Size}" VerticalAlignment="Top" Width="63"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="694,223,0,0" TextWrapping="Wrap" Text="{Binding SelectedBike.HourlyRate}" VerticalAlignment="Top" Width="63"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="694,256,0,0" TextWrapping="Wrap" Text="{Binding SelectedBike.DailyRate}" VerticalAlignment="Top" Width="63"/>
+    </Grid>
+</Window>
