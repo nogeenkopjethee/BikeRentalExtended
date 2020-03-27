@@ -4,13 +4,14 @@ namespace BikeRentalPractise.Model
 {
     public class Bike
     {
+        public int Id { get; set; }
         public BikeModel BikeModel { get; set; }
         public BikeType BikeType { get; set; }
         public BikeGender BikeGender { get; set; }
         public int Size { get; set; }
         public int HourlyRate { get; set; }
         public int DailyRate { get; set; }
-        public ObservableCollection<Store> Stores { get; set; }
+        public virtual ObservableCollection<Store> Stores { get; set; }
 
         public Bike()
         {

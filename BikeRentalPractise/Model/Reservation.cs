@@ -8,6 +8,8 @@ namespace BikeRentalPractise.Model
 {
     public class Reservation
     {
+        public int Id { get; set; }
+        
         public Customer Customer { get; set; }
         public Bike Bikes { get; set; }
         public DateTime StartDate { get; set; }
