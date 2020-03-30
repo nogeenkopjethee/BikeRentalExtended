@@ -222,3 +222,28 @@ C:\Users\Avinash\Downloads\BikeRentalPractise v7 [Comments]\BikeRentalPractise\o
 C:\Users\Avinash\Downloads\BikeRentalPractise v7 [Comments]\BikeRentalPractise\obj\Debug\BikeRentalPractise.csproj.CoreCompileInputs.cache
 C:\Users\Avinash\Downloads\BikeRentalPractise v7 [Comments]\BikeRentalPractise\obj\Debug\BikeRentalPractise.exe
 C:\Users\Avinash\Downloads\BikeRentalPractise v7 [Comments]\BikeRentalPractise\obj\Debug\BikeRentalPractise.pdb
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\BikeRentalPractise.exe
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\BikeRentalPractise.pdb
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\bin\Debug\BikeRentalPractise.exe.config
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\bin\Debug\BikeRentalPractise.exe
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\bin\Debug\BikeRentalPractise.pdb
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\bin\Debug\EntityFramework.dll
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\bin\Debug\EntityFramework.xml
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\BikeRentalPractise.csprojAssemblyReference.cache
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\View\EditBikesWindow.g.cs
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\View\EditStoresWindow.g.cs
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\View\MainWindow.g.cs
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\App.g.cs
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\BikeRentalPractise_MarkupCompile.cache
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\BikeRentalPractise_MarkupCompile.lref
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\View\EditBikesWindow.baml
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\View\EditStoresWindow.baml
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\View\MainWindow.baml
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\BikeRentalPractise.g.resources
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\BikeRentalPractise.Migrations.Initial.resources
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\BikeRentalPractise.Properties.Resources.resources
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\BikeRentalPractise.csproj.GenerateResource.cache
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\BikeRentalPractise.csproj.CoreCompileInputs.cache
+C:\Users\shiva\Source\Repos\nogeenkopjethee\BikeRentalWPF2\BikeRentalPractise\obj\Debug\BikeRentalPractise.csproj.CopyComplete
