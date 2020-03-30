@@ -6,6 +6,8 @@ namespace BikeRentalPractise.ViewModel
 {
     public class EditBikesViewModel
     {
+
+        private BikeStoreModel _db;
         public ObservableCollection<Bike> Bikes { get; set; }
         public Bike SelectedBike { get; set; }
       
@@ -14,8 +16,10 @@ namespace BikeRentalPractise.ViewModel
 
         public Bike NewBike { get; set; }
 
-        public EditBikesViewModel(ObservableCollection<Bike> bikes)
+        public EditBikesViewModel(ObservableCollection<Bike> bikes, BikeStoreModel db)
         {
+            _db = db;
+            
             Bikes = bikes;
             NewBike = new Bike();
 

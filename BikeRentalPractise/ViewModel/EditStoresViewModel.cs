@@ -10,7 +10,7 @@ namespace BikeRentalPractise.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-
+        private BikeStoreModel _db;
 
         public ObservableCollection<Store> Stores { get; set; }
 
@@ -25,30 +25,32 @@ namespace BikeRentalPractise.ViewModel
         private Store _newStore;
         // Calls the INotifyPropertyChanged to check if the value has changed
         public Store NewStore { get => _newStore; set { _newStore = value; Notify("NewStore"); } }
-        public EditStoresViewModel(ObservableCollection<Store> stores)
+        public EditStoresViewModel(ObservableCollection<Store> stores, BikeStoreModel db)
         {
+            _db = db;
+            
             Stores = stores;
 
             NewStore = new Store();
 
             AddClick = new RelayCommand(AddStore);
             DeleteClick = new RelayCommand(DeleteStore);
-            OpenAddBikesClick = new RelayCommand(OpenAddBikes);
+            //OpenAddBikesClick = new RelayCommand(OpenAddBikes);
         }
 
         // Open Add bikes screen
-        private void OpenAddBikes(object o)
-        {
-            if(SelectedStore == null)
-            {
-                MessageBox.Show("Select a store  first");
-            }
-            else
-            {
-                EditBikesWindow view = new EditBikesWindow(SelectedStore.Bikes);
-                view.Show();
-            }   
-        }
+        //private void OpenAddBikes(object o)
+        //{
+        //    if(SelectedStore == null)
+        //    {
+        //        MessageBox.Show("Select a store  first");
+        //    }
+        //    else
+        //    {
+        //        EditBikesWindow view = new EditBikesWindow(SelectedStore.Bikes);
+        //        view.Show();
+        //    }   
+        //}
 
         // Deletes the selected Store
         private void DeleteStore(object obj)

@@ -8,12 +8,12 @@ namespace BikeRentalPractise.View
     /// </summary>
     public partial class EditBikesWindow : Window
     {
-        public EditBikesWindow(System.Collections.ObjectModel.ObservableCollection<Model.Bike> bikes)
+        public EditBikesWindow()
         {
             InitializeComponent();
 
             // Fills the Datagrid with Bikes
-            DataContext = new EditBikesViewModel(bikes);
+            //DataContext = new EditBikesViewModel();
         }
     }
 }

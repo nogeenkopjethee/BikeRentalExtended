@@ -1,49 +1,54 @@
 ﻿using BikeRentalPractise.Model;
 using BikeRentalPractise.View;
+using System;
 using System.Collections.ObjectModel;
 using System.Data.Entity;
+using System.Windows;
 
 namespace BikeRentalPractise.ViewModel
 {
     public class MainWindowViewModel
     {
         
-        private readonly BikeStoreModel _db = new BikeStoreModel();
+        private BikeStoreModel _db = new BikeStoreModel();
         public ObservableCollection<Store> Stores { get; set; }
         public ObservableCollection<Bike> Bikes { get; set; }
+
+        public RelayCommand OpenStoreEditClick { get; set; }
+        public RelayCommand OpenBikesEditClick { get; set; }
         public Store SelectedStore { get; set; }
         public MainWindowViewModel()
         {
             _db.Stores.Load();
             _db.Bikes.Load();
 
+            OpenStoreEditClick = new RelayCommand(ShowEditStoresWindow);
+            OpenBikesEditClick = new RelayCommand(ShowEditBikesWindow);
+
             Stores = _db.Stores.Local;
             Bikes = _db.Bikes.Local;
+
+
         }
 
         // Shows the Edit Stores Window
-        private void ShowEditStoresWindow(object sender, RoutedEventArgs e)
+        private void ShowEditStoresWindow(object obj)
         {
-            MainWindowViewModel vm = (MainWindowViewModel)DataContext;
+            EditStoresViewModel editVM = new EditStoresViewModel(Stores, _db);
 
-            EditStoresViewModel editVM = new EditStoresViewModel(vm.Stores);
-
-            EditStoresWindow view = new EditStoresWindow(vm.Stores);
+            EditStoresWindow view = new EditStoresWindow();
             view.DataContext = editVM;
             view.Show();
         }
 
         // Shows the Edit Bikes Window
-        private void ShowEditBikesWindow(object sender, RoutedEventArgs e)
+        private void ShowEditBikesWindow(object obj)
         {
-
-            MainWindowViewModel vm = (MainWindowViewModel)DataContext;
-
             // Checks if a Store is selected in order to show to Edit Bikes Window
-            if (vm.SelectedStore != null)
+            if (SelectedStore != null)
             {
-                EditBikesViewModel editVM = new EditBikesViewModel(vm.SelectedStore.Bikes);
-                EditBikesWindow view = new EditBikesWindow(vm.Bikes);
+                EditBikesViewModel editVM = new EditBikesViewModel(Bikes, _db);
+                EditBikesWindow view = new EditBikesWindow();
 
                 view.DataContext = editVM;
                 view.Show();
@@ -51,7 +56,6 @@ namespace BikeRentalPractise.ViewModel
             else
             {
                 MessageBox.Show("Please select a bike first");
-
             }
         }
     }

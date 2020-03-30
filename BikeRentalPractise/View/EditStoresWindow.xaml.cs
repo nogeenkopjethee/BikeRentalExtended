@@ -9,7 +9,7 @@ namespace BikeRentalPractise.View
     /// </summary>
     public partial class EditStoresWindow : Window
     {
-        public EditStoresWindow(ObservableCollection<Store> stores)
+        public EditStoresWindow()
         {
             InitializeComponent();
         }

@@ -17,6 +17,6 @@
         <Label Content="Max capacity" HorizontalAlignment="Left" Margin="555,181,0,0" VerticalAlignment="Top"/>
         <TextBox  HorizontalAlignment="Left" Height="23" Margin="634,184,0,0" TextWrapping="Wrap" Text="{Binding SelectedStore.MaxCapacity}" VerticalAlignment="Top" Width="120"/>
         <Label Content="Bikes" HorizontalAlignment="Left" Margin="555,231,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="AddBikeButton" Content="Add bike" HorizontalAlignment="Left" Margin="634,234,0,0" VerticalAlignment="Top" Width="120" Command="{Binding OpenAddBikesClick}"/>
+        <!--<Button x:Name="AddBikeButton" Content="Add bike" HorizontalAlignment="Left" Margin="634,234,0,0" VerticalAlignment="Top" Width="120" Command="{Binding OpenAddBikesClick}"/>-->
     </Grid>
 </Window>
