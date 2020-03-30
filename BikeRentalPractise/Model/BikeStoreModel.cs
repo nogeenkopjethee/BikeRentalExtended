@@ -1,8 +1,6 @@
 namespace BikeRentalPractise.Model
 {
-    using System;
     using System.Data.Entity;
-    using System.Linq;
 
     public class BikeStoreModel : DbContext
     {
