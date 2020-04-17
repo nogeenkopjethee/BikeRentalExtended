@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace BikeRental2Web
+namespace BikeRental2.Web
 {
     public class RouteConfig
     {
