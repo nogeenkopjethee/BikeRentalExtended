@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox ItemsSource="{Binding Stores}" SelectedItem="{Binding SelectedStore}" DisplayMemberPath="City" HorizontalAlignment="Left" Height="214" Margin="58,110,0,0" VerticalAlignment="Top" Width="154" BorderBrush="Black" Background="#FFF1F1F1"/>
+        <ListBox ItemsSource="{Binding Stores}" SelectedItem="{Binding SelectedStore}" DisplayMemberPath="Name" HorizontalAlignment="Left" Height="214" Margin="58,110,0,0" VerticalAlignment="Top" Width="154" BorderBrush="Black" Background="#FFF1F1F1"/>
         <ListBox ItemsSource="{Binding SelectedStore.Bikes}" DisplayMemberPath=" BikeModel" HorizontalAlignment="Left" Height="214" Margin="285,110,0,0" VerticalAlignment="Top" Width="154" BorderBrush="Black" Background="#FFF1F1F1"/>
         <Label Content="Stores" HorizontalAlignment="Left" Margin="58,58,0,0" VerticalAlignment="Top" Width="154" HorizontalContentAlignment="Center" RenderTransformOrigin="0.288,0.313"/>
         <Label Content="Bikes" HorizontalAlignment="Left" Margin="285,58,0,0" VerticalAlignment="Top" Width="154" HorizontalContentAlignment="Center"/>
         <Button x:Name="EditStoresButton" Content="Edit stores" HorizontalAlignment="Left" Margin="556,235,0,0" VerticalAlignment="Top" Width="154" Height="36" Command="{Binding OpenStoreEditClick}"/>
-        <Button x:Name="EditBikesButton" Content="Edit bikes" HorizontalAlignment="Left" Margin="556,146,0,0" VerticalAlignment="Top" Width="154" Height="36"/>
+        <Button x:Name="EditBikesButton" Content="Edit bikes" HorizontalAlignment="Left" Margin="556,146,0,0" VerticalAlignment="Top" Width="154" Height="36" Command="{Binding OpenBikesEditClick}"/>
     </Grid>
 </Window>

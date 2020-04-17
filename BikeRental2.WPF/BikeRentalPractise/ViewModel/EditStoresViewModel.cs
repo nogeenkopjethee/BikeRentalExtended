@@ -25,6 +25,9 @@ namespace BikeRentalPractise.ViewModel
         private Store _newStore;
         // Calls the INotifyPropertyChanged to check if the value has changed
         public Store NewStore { get => _newStore; set { _newStore = value; Notify("NewStore"); } }
+
+        // You need a command to save the changes to the database.
+        public RelayCommand SaveClick { get; set; }
         public EditStoresViewModel(ObservableCollection<Store> stores, BikeStoreModel db)
         {
             _db = db;
@@ -36,6 +39,8 @@ namespace BikeRentalPractise.ViewModel
             AddClick = new RelayCommand(AddStore);
             DeleteClick = new RelayCommand(DeleteStore);
             //OpenAddBikesClick = new RelayCommand(OpenAddBikes);
+
+            SaveClick = new RelayCommand(x => _db.SaveChanges());
         }
 
         // Open Add bikes screen

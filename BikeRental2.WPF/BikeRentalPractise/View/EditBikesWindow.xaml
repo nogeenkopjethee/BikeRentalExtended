@@ -13,7 +13,7 @@
         <TextBox  HorizontalAlignment="Left" Height="23" Margin="607,67,0,0" TextWrapping="Wrap" Text="{Binding NewBike.BikeModel}" VerticalAlignment="Top" Width="64" />
         <TextBox  HorizontalAlignment="Left" Height="23" Margin="609,154,0,0" TextWrapping="Wrap" Text="{Binding NewBike.BikeType}" VerticalAlignment="Top" Width="62" />
         <TextBox  HorizontalAlignment="Left" Height="23" Margin="606,110,0,0" TextWrapping="Wrap" Text="{Binding NewBike.BikeGender}" VerticalAlignment="Top" Width="65" />
-        <Button Command="{Binding DeleteBikeClick}" Content="Delete Bike" HorizontalAlignment="Left" Margin="190,346,0,0" VerticalAlignment="Top" Width="138" Height="41"/>
+        <Button Command="{Binding DeleteBikeClick}" Content="Delete Bike" HorizontalAlignment="Left" Margin="125,346,0,0" VerticalAlignment="Top" Width="138" Height="41" FontSize="18"/>
         <Button Content="Add" Command="{Binding AddBikeClick}" HorizontalAlignment="Left" Margin="610,295,0,0" VerticalAlignment="Top" Width="61" Height="21" RenderTransformOrigin="-0.327,-0.357" />
         <Label Content="Bike Type" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="13.816,4.019" Margin="524,106,0,0" Width="75" Height="27"/>
         <Label Content="Bike Model" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="13.816,4.019" Margin="525,64,0,0" Width="70" Height="27"/>
@@ -30,5 +30,6 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="694,187,0,0" TextWrapping="Wrap" Text="{Binding SelectedBike.Size}" VerticalAlignment="Top" Width="63"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="694,223,0,0" TextWrapping="Wrap" Text="{Binding SelectedBike.HourlyRate}" VerticalAlignment="Top" Width="63"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="694,256,0,0" TextWrapping="Wrap" Text="{Binding SelectedBike.DailyRate}" VerticalAlignment="Top" Width="63"/>
+        <Button Content="Save Changes" HorizontalAlignment="Left" Margin="295,346,0,0" VerticalAlignment="Top" Width="174" Height="41" FontSize="18" Command="{Binding SaveClick}"/>
     </Grid>
 </Window>

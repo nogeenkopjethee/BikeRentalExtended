@@ -10,21 +10,26 @@ namespace BikeRentalPractise.ViewModel
         private BikeStoreModel _db;
         public ObservableCollection<Bike> Bikes { get; set; }
         public Bike SelectedBike { get; set; }
-      
+
         public RelayCommand AddBikeClick { get; set; }
         public RelayCommand DeleteBikeClick { get; set; }
+
+        // You need a command to save the changes to the database.
+        public RelayCommand SaveClick { get; set; }
 
         public Bike NewBike { get; set; }
 
         public EditBikesViewModel(ObservableCollection<Bike> bikes, BikeStoreModel db)
         {
             _db = db;
-            
+
             Bikes = bikes;
             NewBike = new Bike();
 
             AddBikeClick = new RelayCommand(AddBike);
             DeleteBikeClick = new RelayCommand(DeleteBike);
+
+            SaveClick = new RelayCommand(x => _db.SaveChanges());
         }
 
         // Adds new Bike to the Bike list
@@ -35,7 +40,7 @@ namespace BikeRentalPractise.ViewModel
         }
 
         // Deletes selected Bike from the Bike list
-        public void DeleteBike (object a)
+        public void DeleteBike(object a)
         {
             if (SelectedBike != null)
             {
