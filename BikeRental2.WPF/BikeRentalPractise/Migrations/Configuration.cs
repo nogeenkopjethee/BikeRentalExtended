@@ -1,4 +1,5 @@
-﻿using BikeRentalPractise.Model;
+﻿using System.Collections.ObjectModel;
+using BikeRentalPractise.Model;
 
 namespace BikeRentalPractise.Migrations
 {
@@ -16,13 +17,30 @@ namespace BikeRentalPractise.Migrations
          */
         protected override void Seed(BikeRentalPractise.Model.BikeStoreModel context)
         {
-            //  This method will be called after migrating to the latest version.
+            context.Stores.AddOrUpdate(x => x.Name,
+                new Store()
+                {
+                    Name = "Beste Fietsenwinkel in Almere",
+                    Bikes = new ObservableCollection<Bike>
+                    {
+                        new Bike()
+                        {
+                            BikeModel = BikeModel.Batavus,
+                        }
+                    }
+                },
+                new Store()
+            {
+                Name = "Beste Fietsenwinkel in Almere",
+                Bikes = new ObservableCollection<Bike>
+                {
+                    new Bike()
+                    {
+                        BikeModel = BikeModel.Batavus,
+                    }
+                }
+            });
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data.
-            context.Stores.AddOrUpdate(x => x.Name, 
-                new Store());
-            
         }
     }
 }
