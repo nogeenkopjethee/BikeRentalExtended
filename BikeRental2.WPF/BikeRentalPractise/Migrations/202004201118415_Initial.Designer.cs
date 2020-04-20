@@ -13,7 +13,7 @@ namespace BikeRentalPractise.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202003271410177_Initial"; }
+            get { return "202004201118415_Initial"; }
         }
         
         string IMigrationMetadata.Source

@@ -18,11 +18,6 @@ namespace BikeRentalPractise.Model
         public int DailyRate { get; set; }
         [Required]
         public virtual ObservableCollection<Store> Stores { get; set; }
-
-        public Bike()
-        {
-            Stores = new ObservableCollection<Store>(); // creates a new empty list of stores when creating a bike
-        }
     }
     public enum BikeModel
     {

@@ -69,13 +69,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\RelayCommand.cs" />
-    <Compile Include="Migrations\202003271410177_Initial.cs" />
-    <Compile Include="Migrations\202003271410177_Initial.designer.cs">
-      <DependentUpon>202003271410177_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004171359542_AddSeedData.cs" />
-    <Compile Include="Migrations\202004171359542_AddSeedData.designer.cs">
-      <DependentUpon>202004171359542_AddSeedData.cs</DependentUpon>
+    <Compile Include="Migrations\202004201118415_Initial.cs" />
+    <Compile Include="Migrations\202004201118415_Initial.designer.cs">
+      <DependentUpon>202004201118415_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\BikeStoreModel.cs" />
@@ -127,11 +123,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202003271410177_Initial.resx">
-      <DependentUpon>202003271410177_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004171359542_AddSeedData.resx">
-      <DependentUpon>202004171359542_AddSeedData.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004201118415_Initial.resx">
+      <DependentUpon>202004201118415_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
