@@ -33,8 +33,8 @@ namespace BikeRentalPractise.Migrations
                             BikeType  = BikeType.EBike,
                             BikeGender = BikeGender.Man,
                             Size = 100,
-                            HourlyRate = 5,
-                            DailyRate =  50,
+                            HourlyRate = 5.00,
+                            DailyRate =  50.00,
                         },
 
                         new Bike()
@@ -43,8 +43,8 @@ namespace BikeRentalPractise.Migrations
                             BikeType  = BikeType.Mountainbike,
                             BikeGender = BikeGender.Man,
                             Size = 70,
-                            HourlyRate = 6,
-                            DailyRate =  60,
+                            HourlyRate = 6.00,
+                            DailyRate =  60.00,
                         },
 
                         new Bike()
@@ -54,8 +54,8 @@ namespace BikeRentalPractise.Migrations
                             BikeType  = BikeType.Racefiets,
                             BikeGender = BikeGender.Vrouw,
                             Size = 80,
-                            HourlyRate = 5,
-                            DailyRate =  50,
+                            HourlyRate = 5.00,
+                            DailyRate =  50.00,
                         },
 
                          new Bike()
@@ -65,8 +65,8 @@ namespace BikeRentalPractise.Migrations
                             BikeType  = BikeType.Stadsfiets,
                             BikeGender = BikeGender.Vrouw,
                             Size = 85,
-                            HourlyRate = 6,
-                            DailyRate =  60,
+                            HourlyRate = 6.00,
+                            DailyRate =  60.00,
                         },
                          new Bike()
                          {
@@ -74,8 +74,8 @@ namespace BikeRentalPractise.Migrations
                             BikeType  = BikeType.Kinderfiets,
                             BikeGender = BikeGender.Man,
                             Size = 40,
-                            HourlyRate = 2,
-                            DailyRate = 20,
+                            HourlyRate = 2.00,
+                            DailyRate = 20.00,
                          },
 
                          new Bike()
@@ -84,8 +84,8 @@ namespace BikeRentalPractise.Migrations
                             BikeType  = BikeType.Kinderfiets,
                             BikeGender = BikeGender.Vrouw,
                             Size = 40,
-                            HourlyRate = 2,
-                            DailyRate = 20,
+                            HourlyRate = 2.00,
+                            DailyRate = 20.00,
                          }
                     }
                 },
@@ -111,8 +111,8 @@ namespace BikeRentalPractise.Migrations
                         BikeType  = BikeType.Omafiets,
                         BikeGender = BikeGender.Man,
                         Size = 70,
-                        HourlyRate = 3,
-                        DailyRate =  30,
+                        HourlyRate = 3.00,
+                        DailyRate =  30.00,
                     },
 
                         new Bike()
@@ -121,8 +121,8 @@ namespace BikeRentalPractise.Migrations
                             BikeType  = BikeType.Driewieler,
                             BikeGender = BikeGender.Man,
                             Size = 20,
-                            HourlyRate = 2,
-                            DailyRate =  20,
+                            HourlyRate = 2.00,
+                            DailyRate =  20.00,
                         },
 
                         new Bike()
@@ -132,8 +132,8 @@ namespace BikeRentalPractise.Migrations
                             BikeType  = BikeType.Racefiets,
                             BikeGender = BikeGender.Vrouw,
                             Size = 70,
-                            HourlyRate = 5,
-                            DailyRate =  50,
+                            HourlyRate = 5.00,
+                            DailyRate =  50.00,
                         },
 
                          new Bike()
@@ -143,8 +143,8 @@ namespace BikeRentalPractise.Migrations
                             BikeType  = BikeType.Mountainbike,
                             BikeGender = BikeGender.Vrouw,
                             Size = 85,
-                            HourlyRate = 6,
-                            DailyRate =  60,
+                            HourlyRate = 6.00,
+                            DailyRate =  60.00,
                         },
                          new Bike()
                          {
@@ -152,8 +152,8 @@ namespace BikeRentalPractise.Migrations
                             BikeType  = BikeType.Kinderfiets,
                             BikeGender = BikeGender.Man,
                             Size = 40,
-                            HourlyRate = 2,
-                            DailyRate = 20,
+                            HourlyRate = 2.00,
+                            DailyRate = 20.00,
                          },
 
                          new Bike()
@@ -162,8 +162,8 @@ namespace BikeRentalPractise.Migrations
                             BikeType  = BikeType.Kinderfiets,
                             BikeGender = BikeGender.Vrouw,
                             Size = 40,
-                            HourlyRate = 2,
-                            DailyRate = 20,
+                            HourlyRate = 2.00,
+                            DailyRate = 20.00,
                          }
                     }
                 });

@@ -16,8 +16,8 @@
                         BikeType = c.Int(nullable: false),
                         BikeGender = c.Int(nullable: false),
                         Size = c.Int(nullable: false),
-                        HourlyRate = c.Int(nullable: false),
-                        DailyRate = c.Int(nullable: false),
+                        HourlyRate = c.Double(nullable: false),
+                        DailyRate = c.Double(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.Id, unique: true);

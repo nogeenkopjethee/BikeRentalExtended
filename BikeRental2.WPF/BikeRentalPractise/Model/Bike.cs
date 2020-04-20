@@ -14,8 +14,8 @@ namespace BikeRentalPractise.Model
         [Required]
         public BikeGender BikeGender { get; set; }
         public int Size { get; set; }
-        public int HourlyRate { get; set; }
-        public int DailyRate { get; set; }
+        public double HourlyRate { get; set; }
+        public double DailyRate { get; set; }
         [Required]
         public virtual ObservableCollection<Store> Stores { get; set; }
     }
