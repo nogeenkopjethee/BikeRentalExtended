@@ -14,8 +14,10 @@ namespace BikeRental2.Web.Models
         [Key]
         public int Id { get; set; }
 
+        public int CustomerId { get; set; }
         [Required, Display(Name = "Klant")]
         public virtual Customer Customer { get; set; }
+        public int SelectedBikeId { get; set; }
         [Required]
         public virtual Bike SelectedBike
         {
@@ -26,7 +28,7 @@ namespace BikeRental2.Web.Models
                 TotalPrice = GetRate(StartDate, EndDate, value.DailyRate);
             }
         }
-        [Required, Column(TypeName = "Date")]
+        [Required, Column(TypeName = "Date"), DataType(DataType.Date)]
         public DateTime StartDate
         {
             get => _startDate;
@@ -36,7 +38,7 @@ namespace BikeRental2.Web.Models
                 TotalPrice = GetRate(value, EndDate, SelectedBike.DailyRate);
             }
         }
-        [Required, Column(TypeName = "Date")]
+        [Required, Column(TypeName = "Date"), DataType(DataType.Date)]
         public DateTime EndDate
         {
             get => _endDate;
