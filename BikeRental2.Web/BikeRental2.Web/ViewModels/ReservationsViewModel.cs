@@ -45,6 +45,19 @@ namespace BikeRental2.Web.ViewModels
             SelectCustomer = new SelectList(allCustomers, "CustomerId", "ListData");
         }
 
+
+        public double GetRate(DateTime startDate, DateTime endDate, double dailyRate)
+        {
+            int days = (endDate - startDate).Days;
+            double totalRate = days * dailyRate;
+            return totalRate;
+        }
+
+        public void getTotalPrice()
+        {
+            var bike = _db.Bikes.First(b => b.Id == Reservation.SelectedBike_Id);
+            Reservation.TotalPrice = GetRate(Reservation.StartDate, Reservation.EndDate, bike.DailyRate);
+        }
         public void Create()
         {
             _db.Reservations.Add(Reservation);

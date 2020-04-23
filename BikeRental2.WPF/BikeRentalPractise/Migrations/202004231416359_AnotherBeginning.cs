@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class AnotherBeginning : DbMigration
     {
         public override void Up()
         {
@@ -57,16 +57,16 @@
                         EndDate = c.DateTime(nullable: false, storeType: "date"),
                         TotalPrice = c.Double(nullable: false),
                         DateAdded = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        Customer_Id = c.Int(nullable: false),
+                        Customer_Id = c.Int(),
                         DropOffStore_Id = c.Int(),
                         PickUpStore_Id = c.Int(),
-                        SelectedBike_Id = c.Int(nullable: false),
+                        SelectedBike_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Customers", t => t.Customer_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Customers", t => t.Customer_Id)
                 .ForeignKey("dbo.Stores", t => t.DropOffStore_Id)
                 .ForeignKey("dbo.Stores", t => t.PickUpStore_Id)
-                .ForeignKey("dbo.Bikes", t => t.SelectedBike_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Bikes", t => t.SelectedBike_Id)
                 .Index(t => t.Customer_Id)
                 .Index(t => t.DropOffStore_Id)
                 .Index(t => t.PickUpStore_Id)

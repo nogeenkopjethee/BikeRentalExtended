@@ -7,13 +7,13 @@ namespace BikeRentalPractise.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class Initial : IMigrationMetadata
+    public sealed partial class AnotherBeginning : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AnotherBeginning));
         
         string IMigrationMetadata.Id
         {
-            get { return "202004201426583_Initial"; }
+            get { return "202004231416359_AnotherBeginning"; }
         }
         
         string IMigrationMetadata.Source

@@ -16,10 +16,10 @@ namespace BikeRental2.Web.Controllers
         private BikeStoreModel db = new BikeStoreModel();
 
         // GET: Reservations
-        /*public ActionResult Index()
+        public ActionResult Index()
         {
             return View(db.Reservations.ToList());
-        }*/
+        }
 
         // GET: Reservations/Details/5
         public ActionResult Details(int? id)
@@ -52,8 +52,8 @@ namespace BikeRental2.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                vm.Create();
-                return RedirectToAction("Index");
+                vm.getTotalPrice();
+                return View(vm);
             }
 
             return View(vm);

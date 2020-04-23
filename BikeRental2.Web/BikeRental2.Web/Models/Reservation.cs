@@ -7,15 +7,14 @@ namespace BikeRental2.Web.Models
 {
     public class Reservation
     {
-        private double _totalPrice;
-
         [Key]
         public int Id { get; set; }
 
-        public int CustomerId { get; set; }
-        [Required, Display(Name = "Klant")]
+        public int Customer_Id { get; set; }
+        [ForeignKey("Customer_Id"), Display(Name = "Klant")]
         public virtual Customer Customer { get; set; }
-        public int SelectedBikeId { get; set; }
+        public int SelectedBike_Id { get; set; }
+        [ForeignKey("SelectedBike_Id")]
         public virtual Bike SelectedBike { get; set; }
         [Required, Column(TypeName = "Date"), DataType(DataType.Date)]
         public DateTime StartDate { get; set; }
@@ -24,22 +23,9 @@ namespace BikeRental2.Web.Models
         public virtual Store PickUpStore { get; set; }
         public virtual Store DropOffStore { get; set; }
         [Required]
-        public double TotalPrice
-        {
-            get => _totalPrice; set
-            {
-                _totalPrice = GetRate(StartDate, EndDate, SelectedBike.DailyRate);
-            }
-        }
+        public double TotalPrice { get; set; }
 
-        [Timestamp]
+            [Timestamp]
         public byte[] DateAdded { get; set; }
-
-        public double GetRate(DateTime startDate, DateTime endDate, double dailyRate)
-        {
-            int days = (endDate - startDate).Days;
-            double totalRate = days * dailyRate;
-            return totalRate;
-        }
     }
 }
