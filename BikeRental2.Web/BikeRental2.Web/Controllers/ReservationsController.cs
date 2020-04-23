@@ -16,10 +16,10 @@ namespace BikeRental2.Web.Controllers
         private BikeStoreModel db = new BikeStoreModel();
 
         // GET: Reservations
-        public ActionResult Index()
+        /*public ActionResult Index()
         {
             return View(db.Reservations.ToList());
-        }
+        }*/
 
         // GET: Reservations/Details/5
         public ActionResult Details(int? id)
@@ -48,16 +48,15 @@ namespace BikeRental2.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,StartDate,EndDate")] Reservation reservation)
+        public ActionResult Create(ReservationsViewModel vm)
         {
             if (ModelState.IsValid)
             {
-                db.Reservations.Add(reservation);
-                db.SaveChanges();
+                vm.Create();
                 return RedirectToAction("Index");
             }
 
-            return View(reservation);
+            return View(vm);
         }
 
         // GET: Reservations/Edit/5
