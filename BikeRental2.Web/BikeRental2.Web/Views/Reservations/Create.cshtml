@@ -14,74 +14,91 @@
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>Reservation</h4>
+    <div class="form-horizontal">
+        <h4>Reservation</h4>
 
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Reservation.SelectedBike_Id, "Fiets", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownListFor(model => model.Reservation.SelectedBike_Id, Model.SelectBikes, new { htmlAttributes = new { @class = "form-group" } })
-            @Html.ValidationMessageFor(model => model.Reservation.SelectedBike_Id, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Reservation.SelectedBike_Id, "Fiets", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Reservation.SelectedBike_Id, Model.SelectBikes, new { htmlAttributes = new { @class = "form-group" } })
+                @Html.ValidationMessageFor(model => model.Reservation.SelectedBike_Id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Reservation.Customer_Id, "Klant", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Reservation.Customer_Id, Model.SelectCustomer, new { htmlAttributes = new { @class = "form-group" } })
+                @Html.ValidationMessageFor(model => model.Reservation.Customer_Id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Reservation.StartDate, "Vanaf:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Reservation.StartDate, new { htmlAttributes = new { @class = "form-control", @id = "start-date-selector" } })
+                @Html.ValidationMessageFor(model => model.Reservation.StartDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Reservation.EndDate, "Tot:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Reservation.EndDate, new { htmlAttributes = new { @class = "form-control", @id = "end-date-selector" } })
+                @Html.ValidationMessageFor(model => model.Reservation.EndDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Reservation.PickUpStore_Id, "Ophalen bij:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Reservation.PickUpStore_Id, Model.SelectStores, new { htmlAttributes = new { @class = "form-group" } })
+                @Html.ValidationMessageFor(model => model.Reservation.PickUpStore_Id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Reservation.DropOffStore_Id, "Afleveren bij:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Reservation.DropOffStore_Id, Model.SelectStores, new { htmlAttributes = new { @class = "form-group" } })
+                @Html.ValidationMessageFor(model => model.Reservation.DropOffStore_Id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @Html.HiddenFor(model => model.Confirm, htmlAttributes: new { @id = "confirm-value" })
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" id="confirm-button" />
+            </div>
         </div>
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Reservation.Customer_Id, "Klant", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownListFor(model => model.Reservation.Customer_Id, Model.SelectCustomer, new { htmlAttributes = new { @class = "form-group" } })
-            @Html.ValidationMessageFor(model => model.Reservation.Customer_Id, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Reservation.StartDate, "Vanaf:", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Reservation.StartDate, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Reservation.StartDate, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Reservation.EndDate, "Tot:", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Reservation.EndDate, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Reservation.EndDate, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Reservation.PickUpStore_Id, "Ophalen bij:", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownListFor(model => model.Reservation.PickUpStore_Id, Model.SelectStores, new { htmlAttributes = new { @class = "form-group" } })
-            @Html.ValidationMessageFor(model => model.Reservation.PickUpStore_Id, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Reservation.DropOffStore_Id, "Afleveren bij:", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownListFor(model => model.Reservation.DropOffStore_Id, Model.SelectStores, new { htmlAttributes = new { @class = "form-group" } })
-            @Html.ValidationMessageFor(model => model.Reservation.DropOffStore_Id, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    @Html.HiddenFor(model => model.Confirm, htmlAttributes: new { @id = "confirm-value" })
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" id="confirm-button" />
-        </div>
-    </div>
-</div>
 }
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
 
+<script>
+    // Sets up min and max values for date input.
+    var start = document.getElementById('start-date-selector');
+    var end = document.getElementById('end-date-selector');
+
+    start.addEventListener('change', function () {
+        if (start.value)
+            end.min = start.value;
+        if (end.value <= start.value) {
+            end.value = "";
+        }
+    }, false);
+    end.addEventLiseter('change', function () {
+        if (end.value)
+            start.max = end.value;
+    }, false);
+</script>
 
 @if (Model.Confirm == true)
 {
@@ -95,7 +112,7 @@
             });
             $('#confirmModal').modal("show");
 
-            $("#sure-button").click(function() {
+            $("#sure-button").click(function () {
                 $("#confirm-button").click();
             });
         };
