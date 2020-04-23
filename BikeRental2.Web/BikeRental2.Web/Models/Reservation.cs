@@ -20,12 +20,17 @@ namespace BikeRental2.Web.Models
         public DateTime StartDate { get; set; }
         [Required, Column(TypeName = "Date"), DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
+        
+        public int PickUpStore_Id { get; set; }
+        [ForeignKey("PickUpStore_Id")]
         public virtual Store PickUpStore { get; set; }
+        public int DropOffStore_Id { get; set; }
+        [ForeignKey("DropOffStore_Id")]
         public virtual Store DropOffStore { get; set; }
         [Required]
         public double TotalPrice { get; set; }
 
-            [Timestamp]
+        [Timestamp]
         public byte[] DateAdded { get; set; }
     }
 }

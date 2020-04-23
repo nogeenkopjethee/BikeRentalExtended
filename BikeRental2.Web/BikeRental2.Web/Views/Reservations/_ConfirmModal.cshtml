@@ -1,0 +1,28 @@
+﻿@model BikeRental2.Web.ViewModels.ReservationsViewModel
+
+
+
+<div class="modal" tabindex="-1" role="dialog" id="confirmModal">
+    @Html.AntiForgeryToken();
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Bevestig uw keuze.</h4>
+            </div>
+            <div class="modal-body">
+                <p>De totale prijs is: </p>
+                <h3>
+                    @if (Model.Confirm == true)
+                    {
+                        @Html.DisplayName("€" + Model.Reservation.TotalPrice)
+                    }
+                </h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuleren</button>
+                <button type="button" class="btn btn-primary" id="sure-button">Bevestigen</button>
+            </div>
+        </div>
+    </div>
+</div>
+

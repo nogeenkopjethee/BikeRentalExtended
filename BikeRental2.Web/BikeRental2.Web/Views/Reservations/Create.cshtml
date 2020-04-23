@@ -4,66 +4,103 @@
     ViewBag.Title = "Create";
 }
 
+@Html.Partial("_ConfirmModal")
+
 
 
 <h2>Create</h2>
-
-
-
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Reservation</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        
-        <div class="form-group">
-            @Html.LabelFor(model => model.Reservation.SelectedBike_Id, "Fiets", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.Reservation.SelectedBike_Id, Model.SelectBikes, new { htmlAttributes = new { @class = "form-group" } })
-                @Html.ValidationMessageFor(model => model.Reservation.SelectedBike_Id, "", new { @class = "text-danger" })
-            </div>
-        </div>
+<div class="form-horizontal">
+    <h4>Reservation</h4>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Reservation.Customer_Id, "Klant", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.Reservation.Customer_Id, Model.SelectCustomer, new {htmlAttributes = new { @class = "form-group"} })
-                @Html.ValidationMessageFor(model => model.Reservation.Customer_Id, "", new {@class = "text-danger" })
-            </div>
-        </div>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Reservation.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Reservation.StartDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Reservation.StartDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Reservation.EndDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Reservation.EndDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Reservation.EndDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-    
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Reservation.SelectedBike_Id, "Fiets", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Reservation.SelectedBike_Id, Model.SelectBikes, new { htmlAttributes = new { @class = "form-group" } })
+            @Html.ValidationMessageFor(model => model.Reservation.SelectedBike_Id, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Reservation.Customer_Id, "Klant", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Reservation.Customer_Id, Model.SelectCustomer, new { htmlAttributes = new { @class = "form-group" } })
+            @Html.ValidationMessageFor(model => model.Reservation.Customer_Id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Reservation.StartDate, "Vanaf:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Reservation.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Reservation.StartDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Reservation.EndDate, "Tot:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Reservation.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Reservation.EndDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Reservation.PickUpStore_Id, "Ophalen bij:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Reservation.PickUpStore_Id, Model.SelectStores, new { htmlAttributes = new { @class = "form-group" } })
+            @Html.ValidationMessageFor(model => model.Reservation.PickUpStore_Id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Reservation.DropOffStore_Id, "Afleveren bij:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Reservation.DropOffStore_Id, Model.SelectStores, new { htmlAttributes = new { @class = "form-group" } })
+            @Html.ValidationMessageFor(model => model.Reservation.DropOffStore_Id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @Html.HiddenFor(model => model.Confirm, htmlAttributes: new { @id = "confirm-value" })
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" id="confirm-button" />
+        </div>
+    </div>
+</div>
 }
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+
+@if (Model.Confirm == true)
+{
+    <script type="text/javascript">
+
+        window.onload = function () {
+            document.getElementById("confirm-value").value = true;
+            $("#confirmModal").modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+            $('#confirmModal').modal("show");
+
+            $("#sure-button").click(function() {
+                $("#confirm-button").click();
+            });
+        };
+    </script>
+}
 
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>

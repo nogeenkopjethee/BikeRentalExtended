@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -18,16 +19,16 @@ namespace BikeRental2.Web.ViewModels
         public SelectList SelectCustomer { get; set; }
 
         public Reservation Reservation { get; set; }
+        public bool Confirm { get; set; }
 
         public ReservationsViewModel()
         {
-            
             var allBikes = _db.Bikes
                 .AsEnumerable()
                 .Select(s => new
                 {
                     BikeID = s.Id,
-                    ListData = $"{s.BikeModel} -- {s.BikeGender} -- Beschikbaar bij {s.Stores.First().Name}"
+                    ListData = $"{s.BikeModel} -- {s.BikeType} -- {s.BikeGender} -- Beschikbaar bij {s.Stores.Count} winkels."
                 })
                 .ToList();
 
@@ -43,6 +44,7 @@ namespace BikeRental2.Web.ViewModels
             SelectStores = new SelectList(_db.Stores, "Id", "Name");
             SelectBikes = new SelectList(allBikes, "BikeID", "ListData");
             SelectCustomer = new SelectList(allCustomers, "CustomerId", "ListData");
+            
         }
 
 
@@ -53,9 +55,9 @@ namespace BikeRental2.Web.ViewModels
             return totalRate;
         }
 
-        public void getTotalPrice()
+        public void GetTotalPrice()
         {
-            var bike = _db.Bikes.First(b => b.Id == Reservation.SelectedBike_Id);
+            Bike bike = _db.Bikes.FirstOrDefault(b => b.Id == Reservation.SelectedBike_Id);
             Reservation.TotalPrice = GetRate(Reservation.StartDate, Reservation.EndDate, bike.DailyRate);
         }
         public void Create()
