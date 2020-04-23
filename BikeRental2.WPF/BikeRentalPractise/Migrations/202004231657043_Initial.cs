@@ -73,17 +73,17 @@
                 .Index(t => t.SelectedBike_Id);
             
             CreateTable(
-                "dbo.StoreBikes",
+                "dbo.BikeStores",
                 c => new
                     {
-                        Store_Id = c.Int(nullable: false),
-                        Bike_Id = c.Int(nullable: false),
+                        BikeId = c.Int(nullable: false),
+                        StoreId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => new { t.Store_Id, t.Bike_Id })
-                .ForeignKey("dbo.Stores", t => t.Store_Id, cascadeDelete: true)
-                .ForeignKey("dbo.Bikes", t => t.Bike_Id, cascadeDelete: true)
-                .Index(t => t.Store_Id)
-                .Index(t => t.Bike_Id);
+                .PrimaryKey(t => new { t.BikeId, t.StoreId })
+                .ForeignKey("dbo.Stores", t => t.BikeId, cascadeDelete: true)
+                .ForeignKey("dbo.Bikes", t => t.StoreId, cascadeDelete: true)
+                .Index(t => t.BikeId)
+                .Index(t => t.StoreId);
             
         }
         
@@ -93,17 +93,17 @@
             DropForeignKey("dbo.Reservations", "PickUpStore_Id", "dbo.Stores");
             DropForeignKey("dbo.Reservations", "DropOffStore_Id", "dbo.Stores");
             DropForeignKey("dbo.Reservations", "Customer_Id", "dbo.Customers");
-            DropForeignKey("dbo.StoreBikes", "Bike_Id", "dbo.Bikes");
-            DropForeignKey("dbo.StoreBikes", "Store_Id", "dbo.Stores");
-            DropIndex("dbo.StoreBikes", new[] { "Bike_Id" });
-            DropIndex("dbo.StoreBikes", new[] { "Store_Id" });
+            DropForeignKey("dbo.BikeStores", "StoreId", "dbo.Bikes");
+            DropForeignKey("dbo.BikeStores", "BikeId", "dbo.Stores");
+            DropIndex("dbo.BikeStores", new[] { "StoreId" });
+            DropIndex("dbo.BikeStores", new[] { "BikeId" });
             DropIndex("dbo.Reservations", new[] { "SelectedBike_Id" });
             DropIndex("dbo.Reservations", new[] { "PickUpStore_Id" });
             DropIndex("dbo.Reservations", new[] { "DropOffStore_Id" });
             DropIndex("dbo.Reservations", new[] { "Customer_Id" });
             DropIndex("dbo.Customers", new[] { "Id" });
             DropIndex("dbo.Bikes", new[] { "Id" });
-            DropTable("dbo.StoreBikes");
+            DropTable("dbo.BikeStores");
             DropTable("dbo.Reservations");
             DropTable("dbo.Customers");
             DropTable("dbo.Stores");
