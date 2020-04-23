@@ -7,60 +7,25 @@ namespace BikeRental2.Web.Models
 {
     public class Reservation
     {
-        private Bike _selectedBike;
-        private DateTime _startDate;
-        private DateTime _endDate;
-
         [Key]
         public int Id { get; set; }
 
-        public int CustomerId { get; set; }
-        [Required, Display(Name = "Klant")]
+        public int Customer_Id { get; set; }
+        [ForeignKey("Customer_Id"), Display(Name = "Klant")]
         public virtual Customer Customer { get; set; }
-        public int SelectedBikeId { get; set; }
-        [Required]
-        public virtual Bike SelectedBike
-        {
-            get => _selectedBike;
-            set
-            {
-                _selectedBike = value;
-                TotalPrice = GetRate(StartDate, EndDate, value.DailyRate);
-            }
-        }
+        public int SelectedBike_Id { get; set; }
+        [ForeignKey("SelectedBike_Id")]
+        public virtual Bike SelectedBike { get; set; }
         [Required, Column(TypeName = "Date"), DataType(DataType.Date)]
-        public DateTime StartDate
-        {
-            get => _startDate;
-            set
-            {
-                _startDate = value;
-                TotalPrice = GetRate(value, EndDate, SelectedBike.DailyRate);
-            }
-        }
+        public DateTime StartDate { get; set; }
         [Required, Column(TypeName = "Date"), DataType(DataType.Date)]
-        public DateTime EndDate
-        {
-            get => _endDate;
-            set
-            {
-                _endDate = value;
-                TotalPrice = GetRate(StartDate, value, SelectedBike.DailyRate);
-            }
-        }
+        public DateTime EndDate { get; set; }
         public virtual Store PickUpStore { get; set; }
         public virtual Store DropOffStore { get; set; }
         [Required]
         public double TotalPrice { get; set; }
 
-        [Timestamp]
+            [Timestamp]
         public byte[] DateAdded { get; set; }
-
-        public double GetRate(DateTime startDate, DateTime endDate, double dailyRate)
-        {
-            int days = (endDate - startDate).Days;
-            double totalRate = days * dailyRate;
-            return totalRate;
-        }
     }
 }

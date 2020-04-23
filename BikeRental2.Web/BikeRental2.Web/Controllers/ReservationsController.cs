@@ -48,16 +48,15 @@ namespace BikeRental2.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,StartDate,EndDate")] Reservation reservation)
+        public ActionResult Create(ReservationsViewModel vm)
         {
             if (ModelState.IsValid)
             {
-                db.Reservations.Add(reservation);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                vm.getTotalPrice();
+                return View(vm);
             }
 
-            return View(reservation);
+            return View(vm);
         }
 
         // GET: Reservations/Edit/5
