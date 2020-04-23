@@ -28,8 +28,8 @@ namespace BikeRentalPractise.Model
         {
             modelBuilder.Entity<Store>()
                 .HasMany(c => c.Bikes).WithMany(i => i.Stores)
-                .Map(t => t.MapLeftKey("BikeId")
-                    .MapRightKey("StoreId")
+                .Map(t => t.MapLeftKey("StoreId")
+                    .MapRightKey("BikeId")
                     .ToTable("BikeStores"));
         }
     }

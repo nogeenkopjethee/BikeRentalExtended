@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class Inititial : DbMigration
     {
         public override void Up()
         {
@@ -57,16 +57,16 @@
                         EndDate = c.DateTime(nullable: false, storeType: "date"),
                         TotalPrice = c.Double(nullable: false),
                         DateAdded = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
-                        Customer_Id = c.Int(nullable: false),
+                        Customer_Id = c.Int(),
                         DropOffStore_Id = c.Int(),
                         PickUpStore_Id = c.Int(),
-                        SelectedBike_Id = c.Int(nullable: false),
+                        SelectedBike_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Customers", t => t.Customer_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Customers", t => t.Customer_Id)
                 .ForeignKey("dbo.Stores", t => t.DropOffStore_Id)
                 .ForeignKey("dbo.Stores", t => t.PickUpStore_Id)
-                .ForeignKey("dbo.Bikes", t => t.SelectedBike_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Bikes", t => t.SelectedBike_Id)
                 .Index(t => t.Customer_Id)
                 .Index(t => t.DropOffStore_Id)
                 .Index(t => t.PickUpStore_Id)
@@ -76,14 +76,14 @@
                 "dbo.BikeStores",
                 c => new
                     {
-                        BikeId = c.Int(nullable: false),
                         StoreId = c.Int(nullable: false),
+                        BikeId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => new { t.BikeId, t.StoreId })
-                .ForeignKey("dbo.Stores", t => t.BikeId, cascadeDelete: true)
-                .ForeignKey("dbo.Bikes", t => t.StoreId, cascadeDelete: true)
-                .Index(t => t.BikeId)
-                .Index(t => t.StoreId);
+                .PrimaryKey(t => new { t.StoreId, t.BikeId })
+                .ForeignKey("dbo.Stores", t => t.StoreId, cascadeDelete: true)
+                .ForeignKey("dbo.Bikes", t => t.BikeId, cascadeDelete: true)
+                .Index(t => t.StoreId)
+                .Index(t => t.BikeId);
             
         }
         
@@ -93,10 +93,10 @@
             DropForeignKey("dbo.Reservations", "PickUpStore_Id", "dbo.Stores");
             DropForeignKey("dbo.Reservations", "DropOffStore_Id", "dbo.Stores");
             DropForeignKey("dbo.Reservations", "Customer_Id", "dbo.Customers");
-            DropForeignKey("dbo.BikeStores", "StoreId", "dbo.Bikes");
-            DropForeignKey("dbo.BikeStores", "BikeId", "dbo.Stores");
-            DropIndex("dbo.BikeStores", new[] { "StoreId" });
+            DropForeignKey("dbo.BikeStores", "BikeId", "dbo.Bikes");
+            DropForeignKey("dbo.BikeStores", "StoreId", "dbo.Stores");
             DropIndex("dbo.BikeStores", new[] { "BikeId" });
+            DropIndex("dbo.BikeStores", new[] { "StoreId" });
             DropIndex("dbo.Reservations", new[] { "SelectedBike_Id" });
             DropIndex("dbo.Reservations", new[] { "PickUpStore_Id" });
             DropIndex("dbo.Reservations", new[] { "DropOffStore_Id" });
