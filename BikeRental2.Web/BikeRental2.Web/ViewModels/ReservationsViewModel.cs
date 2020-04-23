@@ -28,7 +28,7 @@ namespace BikeRental2.Web.ViewModels
                 .Select(s => new
                 {
                     BikeID = s.Id,
-                    ListData = $"{s.BikeModel} -- {s.BikeType} -- {s.BikeGender} -- Beschikbaar bij {s.Stores.Count} winkels."
+                    ListData = $"{s.BikeModel} -- {s.BikeType} -- {s.BikeGender} -- Beschikbaar bij {s.Stores.Count} winkels --- €{s.DailyRate} per dag"
                 })
                 .ToList();
 
